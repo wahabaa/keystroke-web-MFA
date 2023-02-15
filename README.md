@@ -64,7 +64,7 @@ Upon a successful migration, you can now run the server. The server should run o
 python manage.py runserver
 ```
 
-![alt text](home screen.png)
+<img src="home_screen.png" align="center">
 
 ## Usage
 Steps to follow for a successful interaction with the website.
