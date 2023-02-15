@@ -485,10 +485,10 @@ def addMouseToProfile(iteration, ip_address, attempt_user, genuine, decision, lo
 def sendSMS(message, phone):
     if '+' not in str(phone):
         phone = '+1' + str(phone)
-    account_sid = 'AC7089e340d1506581c88f7ba7ddfc0e5b'
-    auth_token = '678c34a49d84a52533cefbbe2d691ece'
+    account_sid = '*******************************'
+    auth_token = '*******************************'
     client = Client(account_sid, auth_token)
-    client.messages.create(to=phone, from_='+13237363926', body=message)
+    client.messages.create(to=phone, from_='+13233363926', body=message)
 
 
 def index(request):

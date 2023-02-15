@@ -3,8 +3,8 @@
 This website demonstrates keystroke dynamics as an alternative MFA other than the popular OTP or push notification MFAs.
 
 ## House Keeping
-1. Create a database called "Soteria" (you can use any name of your choice).
-2. Modify the "settings.py" file with your newly created database name, user, host and password.
+1. Create a database called `Soteria` (you can use any name of your choice).
+2. Modify the `settings.py` file with your newly created database name, user, host and password.
     ```python
     DATABASES = {
     'default': {
@@ -16,9 +16,9 @@ This website demonstrates keystroke dynamics as an alternative MFA other than th
         'PASSWORD': '*****', # Set DB password
     }}
     ```
-3. Visit sendgrid.com to create an account for sending sms and email.
+3. Visit sendgrid.com to create an account for sending email.
 4. Follow the guide here on how to set up a new api key https://app.sendgrid.com/guide/integrate/langs/smtp
-5. Modify the code below in the "settings.py" file with your sendgrid account details such as email, api key and password.
+5. Modify the code below in the `settings.py` file with your sendgrid account details such as email, api key and password.
     ```python
     # Email settings
     DEFAULT_FROM_EMAIL = 'tester@gmail.com'
@@ -29,7 +29,18 @@ This website demonstrates keystroke dynamics as an alternative MFA other than th
     EMAIL_HOST_USER = 'apikey'
     EMAIL_HOST_PASSWORD = '***************************'
     ```
-6. House is clean!
+6. Visit `twilio.com` and create an account to get an assigned phone number for sending SMS. 
+7. Modify the `view.py` file with your account_sid, auth_token, and assigned phone number (change from `+13233363926` to yours). You can find the information on your twilio dashboard.
+   ```python
+   def sendSMS(message, phone):
+    if '+' not in str(phone):
+        phone = '+1' + str(phone)
+    account_sid = '*******************************'
+    auth_token = '*******************************'
+    client = Client(account_sid, auth_token)
+    client.messages.create(to=phone, from_='+13233363926', body=message)
+   ```
+8. House is clean!
 
 ## Installation
 
