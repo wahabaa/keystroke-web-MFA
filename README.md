@@ -16,8 +16,8 @@ This website demonstrates keystroke dynamics as an alternative MFA other than th
         'PASSWORD': '*****', # Set DB password
     }}
     ```
-3. Visit sendgrid.com to create an account for sending email.
-4. Follow the guide here on how to set up a new api key https://app.sendgrid.com/guide/integrate/langs/smtp
+3. Visit [Sendgrid](https://sendgrid.com) to create an account for sending email.
+4. Follow the guide [here](https://app.sendgrid.com/guide/integrate/langs/smtp) on how to set up a new api key.
 5. Modify the code below in the `settings.py` file with your sendgrid account details such as email, api key and password.
     ```python
     # Email settings
@@ -29,7 +29,7 @@ This website demonstrates keystroke dynamics as an alternative MFA other than th
     EMAIL_HOST_USER = 'apikey'
     EMAIL_HOST_PASSWORD = '***************************'
     ```
-6. Visit `twilio.com` and create an account to get an assigned phone number for sending SMS. 
+6. Visit [Twilio](https://twilio.com) and create an account to get an assigned phone number for sending SMS. 
 7. Modify the `view.py` file with your account_sid, auth_token, and assigned phone number (change from `+13233363926` to yours). You can find the information on your twilio dashboard.
    ```python
    def sendSMS(message, phone):
@@ -95,4 +95,4 @@ Feel free to make changes to the code.
 
 ## License
 
-[SERL Clarkson, CITER](https://choosealicense.com/licenses/mit/)
+[SERL Clarkson, CITER](https://clarkson.edu)
