@@ -1,0 +1,63 @@
+
+
+<!DOCTYPE html>
+
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script type="text/javascript">
+           window.onload = function() {
+                var num = "{{num}}";
+                var num1 = parseInt(num)+parseInt(localStorage.num2);
+                document.getElementById("display").innerHTML = num1;
+<!--                window.localStorage.clear("num2");-->
+           }
+    </script>
+
+</head>
+<body>
+<div class="container">
+    {% if num %}
+    <form class="form-horizontal loginForm" action="#" name="loginForm" autocomplete="off" method="POST">
+        {% csrf_token %}
+        <div>
+          <h6 class="text-center" style="font-weight: bold;">Your incremented number is </h6>
+            <br><br>
+          <p id="display" class="text-center" style="font-weight: bold;"> </p>
+        </div>
+        <br><br>
+        <input type="submit" value="Back" class="btn"/>
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+
+    </form>
+
+
+    {% else%}
+    <form class="form-horizontal loginForm" action="#" name="loginForm" autocomplete="off" method="POST">
+        {% csrf_token %}
+        <div>
+          <h6 class="text-center" style="font-weight: bold;">This will increment the first number by 5 in the server and add it to the second number in the browser</h6>
+          <br><br>
+          <input size="50" type="text" id="number" name="number" placeholder="Enter first number" autocomplete="off" required>
+          <br><br>
+          <input size="50" type="text" id="number2" name="number2" placeholder="Enter second number" autocomplete="off" required>
+        </div>
+        <br><br>
+        <input id="increment" type="submit" value="Increment In Browser" class="btn" onclick="getNumber(event)"/>
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+        <script type="text/javascript">
+           window.localStorage.clear("num2");
+        </script>
+    </form>
+    {% endif %}
+</div>
+<script type="text/javascript" src="{% static 'keys/js/increment.js' %}"></script>
+</body>
+</html>
+
+{% endblock %}

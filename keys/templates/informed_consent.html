@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% block content %}
+
+      </header>
+      <section class="main-container">
+        <div class="title">
+          <h1>New User Signup</h1>
+        </div>
+        <div class="container">
+          <div class="shadow-container">
+            <div class="step4-form">
+              <form class="form-horizontal step4Form" action="signup1" name="step4Form" novalidate autocomplete="off" method="post">
+              {% csrf_token %}
+<!--                <div class="row">-->
+                  <div class="col-sm-12">
+                    <div class="terms-conditions">
+                      <h2 class="text-center">Informed Consent to Participate in Research</h2>
+                      <br><br>
+                      <h4>Project Title: User Study of a Web-based Account Management System</h4>
+                      <h4>Researcher(s): Daqing Hou, Mahesh Banavar, Stephanie Schuckers</h4>
+                      <h4>Institutional Review Board (IRB) approval number:</h4>
+                      <br><br>
+                      <h3>Summary of the study:</h3>
+                      <p>The project requires a participant to engage in tasks consisting of creating an account on a provided website with their personal information, attempting login and account recovery multiple times after the initial account creation, and acting as an impostor by attacking few other participants. Under the hood, the website capture and utilize keystroke timing information to authenticate the users. By letting real users use our website,
+                        our main objective for this study is to evaluate the user experience and performance of the authentication process with real users and website. <br><br>Please read the material below if you are interested in participating in this study.</p>
+                      <br><br>
+                      <h3>What to expect:</h3>
+                      <p>Are you 18 years of age or older? If your answer no, please do not participate in the study. Your responses to the screening questions will be kept on file. <br><br>If you continue to participate, you will be asked to create a personal account on this website, which requests the following Information from you: names, date of birth, a contact address, an email, and a phone number. This information is collected to simulate a user experience similar to the
+                        commercial websites. The phone number and email will be used to receive One-Time Password (OTPs) and account recovery links during account recovery and user login process. This information will be stored securely on a Clarkson server and only accessible to the research team. To simulate the impostor attacks, your information listed above would be shared with no more than 20 randomly selected users who participate in the same study. By signing this Informed
+                        Consent, you agree that you will fully respect the confidentiality of such information about the other participants that would be shared with you and such information shall only be used for the purpose of simulating impostor attacks. <br><br>We estimate each login attempts to take 10 to 20 seconds and each account recovery attempt to take 2 to 3 minutes. To simulate an experience similar to the real user scenario where users trigger the forget password mechanism
+                        because they couldn’t remember their password, we require that these activities (logins, account recovery and impostor attacks) be spread out across a period of at least 4 weeks with significant activities done every week (but no more than 30 minutes per week).  During your interaction with the website, it will monitor and record the timing information of your keystroke press/release and your mouse. <br><br>If you have any questions about this research, you may
+                        contact Dr. Daqing Hou at dhou@clarkson.edu.</p>
+                      <br><br>
+                      <h3>Risks and discomforts to you if you take part in this study:</h3>
+                      <p>There is no more than minimal risk associated with participating in this study. There are no side effects from the process of data collection. No special physical, psychological, or social conditions are necessary.  If potential participants have a psychological aversion to the procedures related to any of the biometric technology, they may decline to participate at any point in the study. No medical supervision is necessary. If you decline to participate before
+                        completing a session, you will not be compensated. Subjects can discontinue participation at any time. Such discontinuation will not involve penalty or loss of benefits to which subjects are otherwise entitled. <br><br>There is an expected concern regarding privacy/confidentiality for participants taking part in this study. Personal Information collected in this study (full name, date of birth, address, email, and phone), will be protected and stored in a secure
+                        server and accessed by only the researchers. This information is collected to simulate an authentic user experience similar to commercial websites. To simulate the impostor attacks, the above information would be shared with no more than 20 other randomly selected participants who have agreed to keep such information confidential and use the shared information only for the purpose of this study. <br><br>During the study, if any part of the data is extracted from
+                        the database, standard encryption schemes will be used at all time. Any database transfers from the server will be encrypted with SSL prior to the transfer. All the equipment (Computers, Laptops, hard disk, etc.), software and accounts used in this study are fully dedicated to this project and will not be shared with any other research project. In addition, the data will never leave the lab space on any type of device (Laptop, flash disk, hard drive). Only the
+                        research team will have access to the collected data when it is extracted out of the database. <br><br>The data will be kept for 5 years and will be discarded afterward.</p>
+                      <br><br>
+                      <h3>The benefits to you if you take part in this study:</h3>
+                      <p>Beyond the compensation, there are no direct benefits to you, but the knowledge gained may be of benefit to society as it may help to improve identification and prevent digital fraud through the use of behavioral biometrics. <br><br>What will you receive for taking part in this study: You will be compensated $10 after creating an account and completing 100 login attempts, $10 after completing 20 account recovery attempts, $15 after completing impostor attacks
+                        (both login and account recovery) on 5 users each for 10 times. An extra $5 will be awarded if you successfully break into a provided account as an impostor. To simulate an experience similar to the real user scenario where users trigger the forget password mechanism because they couldn’t remember their password, we expect that these tasks (logins, account recovery and impostor attacks) be spread out across a period of at least 4 weeks with sufficient activities
+                        done every week (but less than 0.5 hour of effort per week). </p>
+                      <br><br>
+                      <h3>What will happen to the information collected in this study:</h3>
+                      <p>The information collected will be kept confidential as much as is permitted by law. From the date of your visit, you have 30 days to contact the investigators to ask that your data be dropped from the study; if you do, the data from this session is deleted. In any publication that results from this research, your name, or any information from which you might be obviously identified, will not be included unless your consent is obtained.
+                        The information collected will be kept confidential as much as is permitted by law.</p>
+                      <br><br>
+                      <h3>What rights you have when you take part in this study:</h3>
+                      <p>Participation in this research is voluntary. Deciding not to take part, or to stop being a part of this research will result in no penalty, fine or loss of benefits that you otherwise have a right to. If you have questions about your rights as a research subject or if you wish to report any harm, injury, risk or other concern, please contact the Clarkson University Institutional Review Board (IRB) for human subjects research at irb@clarkson.edu or (315) 268-6475.</p>
+                      <br><br>
+                      <h3>Conflict of Interest:</h3>
+                      <p>The researchers have no financial interest in performing this study.</p>
+                      <br><br>
+                      <h3>Informed Consent: </h3>
+                      <p>Please sign below by typing your full name to show you have had the purpose of this research explained and you have been informed of what to expect and your rights. You should have all your questions answered to your satisfaction. Your signature shows that you agree to take part in this research. By signing below, you also attest that you are at least 18 years old. You will be given a copy of this consent form to keep for your records.</p>
+                    </div>
+                    <br>
+                      <input type="text" id="fullname" name="fullname" autocomplete="disabled" placeholder="Sign by entering your Full Name" style="width: 40em;" required>
+                  </div>
+
+<!--                </div>-->
+                <div class="row">
+                  <div class="col-sm-12">
+                    <div class="terms">
+                      <br>
+                      <div class="buttons">
+                        <a class="btn btn-large" href="../" title="back to login screen">I Disagree</a>
+                        <button type="button" disabled class="btn btn-large continue disable-button">I Agree</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+ {% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+      <section class="main-container">
+        <div class="title">
+          <h1>Success</h1>
+        </div>
+        <div class="container">
+          <div class="shadow-container">
+            <div class="success-form">
+              <div class="row">
+                  <div class="col-sm-12">
+                    <div align="center" class="welcome-text">
+                      <h2>Success</h2>
+                        <br>
+<!--                      <p class="text-center">You have successfully registered for soteria mobile. Click "Continue" to proceed.</p>-->
+                      {% if end %} You have completed enrollment, thank you very much for you cooperation. You can now proceed to login!
+                        </div>
+                          <iframe  width="620" height="400" src={{video}}></iframe>
+                        <br><br>
+                        <a class="btn btn-large" href="http://127.0.0.1:8000/" title="back to home screen">Go to Home</a>
+                        {% else %}
+                      {% if counter %}<p> You have contributed {{counter}} time(s) out of {{repeat}}. Click "Continue" to proceed.</p>{% endif %}
+                        <br>
+                            </div>
+                             <iframe  width="620" height="400" src={{video}}></iframe>
+                      <br><br>
+                            <div class="secure-btn">
+                              <input type="button" value="Continue" class="btn" onclick = "window.location.href = 'step1.html'"/>
+                      {% endif %}
+                    </div> 
+                  </div> 
+                </div>
+            </div>
+          </div>
+        </div>
+      </section>
+   {% endblock %}
